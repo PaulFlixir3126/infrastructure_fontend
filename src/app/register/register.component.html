@@ -1,0 +1,140 @@
+<form [formGroup]="register">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2 card vhvw pr-2 pl-2">
+        <ul class="pl-0 pt-3" style="list-style-type:none;">
+          <li>
+            <div class="comp-dashboard" (click)="redirect('/admin/dashboard')">
+              <i class="fa fa-tachometer  bg-c-default pl-2"><span class="fontfamily"> Admin Dashboard</span></i>
+            </div>
+          </li>
+          <li>
+            <div class="comp-dashboard pt-2" (click)="redirect('/user/dashboard')">
+              <i class="fa fa-users  bg-c-default  pl-2"><span class="fontfamily"> User Dashboard</span></i>
+            </div>
+          </li>
+          <li>
+            <div class="comp-dashboard pt-2" (click)="redirect('/admin/task')">
+              <i class="fa fa-table  bg-c-default  pl-2"><span class="fontfamily"> Employee Task Details</span></i>
+            </div>
+          </li>
+          <li>
+            <div class="comp-dashboard pt-2" (click)="redirect('/admin/report')">
+              <i class="fa fa-table  bg-c-default  pl-2"><span class="fontfamily"> Employee Report</span></i>
+            </div>
+          </li>
+          <li>
+            <div class="comp-dashboard pt-2" (click)="redirect('admin/project')">
+              <i class="fa fa-book bg-c-default pl-2"><span class="fontfamily"> Project Form</span></i>
+            </div>
+          </li>
+          <li>
+            <div class="comp-dashboard pt-2">
+              <i class="fa fa-book bg-c-active pl-2"><span class="fontfamily"> Registration Form</span></i>
+            </div>
+          </li>
+          <li>
+            <div class="comp-dashboard pt-2">
+              <i class="fas fa-box bg-c-default pl-2"><span class="fontfamily"> Others</span></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-8 offset-sm-1 mt-3">
+        <div class=" divShadow col-sm-12">
+          <div class="row">
+            <div class="col-sm-6 flexCol">
+              <b>
+                <h4 class="pb-3">Create New User / Admin </h4>
+              </b>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6 flexCol">
+              <mat-form-field>
+                <input matInput type="text" name="firstName" formControlName="firstName" id="FirstName"
+                  placeholder="First Name">
+                <mat-error *ngIf="isFieldValid('firstName')">
+                  <span *ngIf="register.hasError('required',['firstName'])">Cannot be blank.</span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6 flexCol">
+              <mat-form-field>
+                <input matInput type="text" name="lastName" formControlName="lastName" id="lastName"
+                  placeholder="Last Name">
+                <mat-error *ngIf="isFieldValid('lastName')">
+                  <span *ngIf="register.hasError('required',['lastName'])">Cannot be blank.</span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 flexCol">
+              <mat-form-field>
+                <input matInput type="text" name="email" formControlName="email" id="email" placeholder="Email">
+                <mat-error>
+                  <span *ngIf="isFieldValid('email')">
+                    <span *ngIf="register.hasError('required',['email'])">
+                      Cannot be blank.
+                    </span>
+                  </span>
+                  <span *ngIf="isFieldValid('email')">
+                    <span *ngIf="register.hasError('pattern',['email'])">
+                      Invalid Email.
+                    </span>
+                  </span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6 flexCol">
+              <mat-checkbox class="mt-sm-3 pt-2" id="admin" name="admin" formControlName="admin">Create as Admin
+                account
+              </mat-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 flexCol">
+              <mat-form-field>
+                <input matInput placeholder="Password" type="password" [type]="hide ? 'password' : 'text'" id="password"
+                  name="password" (keyup)="strength()" formControlName="password">
+                <mat-error *ngIf="isFieldValid('password')">
+                  <span>
+                    <span *ngIf="register.hasError('required',['password'])">Cannot be blank.</span>
+                  </span>
+                </mat-error>
+                <mat-icon class="toggle-password" matSuffix (click)="hide =!hide">
+                  {{hide ? 'visibility_off' : 'visibility'}}
+                </mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6 flexCol">
+              <mat-form-field>
+                <input (paste)="$event.preventDefault()" matInput placeholder="Confirm Password"
+                  (keyup)="passwordMatch()" type="confirmPassword" id="confirmPassword" name="confirmPassword"
+                  formControlName="confirmPassword">
+                <mat-error *ngIf="isFieldValid('confirmPassword')">
+                  <span *ngIf="register.hasError('required',['confirmPassword'])">Cannot be blank.</span>
+                </mat-error>
+              </mat-form-field>
+              <mat-error>
+                <span class="err_style"> {{ passwordMatchMessage }}</span>
+              </mat-error>
+            </div>
+          </div>
+          <!-- <div class="col-sm-12">
+          <div class="col-sm-6 flexCol">
+            <label class="checkbox-inline"><input type="checkbox" id="checkbox" required="required"> Create as
+              Admin</label>
+          </div>
+        </div> -->
+          <div class="col-sm-6 offset-sm-3 pt-3">
+            <button type="button" (click)="onSubmit();" id="Register"
+              class="bt-width btn btn-cust btn-md">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

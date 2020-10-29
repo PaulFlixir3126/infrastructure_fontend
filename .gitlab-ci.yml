@@ -1,0 +1,20 @@
+build-ui: 
+     tags:
+     - ci
+     script:
+     - docker build -t ui:latest .
+     only:
+     - master
+     - develop
+     - ft_integration
+         
+deploy-ui:
+     tags:
+     - ci
+     script:
+     - cd /data/app/tasktracker/
+     - docker-compose up -d
+     only:
+     - master
+     - develop
+     - ft_integration
