@@ -78,7 +78,7 @@ export class UserdashboardComponent implements OnInit {
   ];
   public lineChartLabels: Label[] = ['May', 'June', 'July', 'Aug', 'Sept', "Oct"];
   // public lineChartOptions;
-  public lineChartOptions: (ChartOptions & { annotation: any }) = {
+  public lineChartOptions: (ChartOptions & {}) = {
     responsive: true,
   };
   public lineChartColors: Color[] = [
