@@ -3,7 +3,7 @@ const envObject = {
   BACKEND_URL: '/api/backend'
 };
 
-console.log("production env")
+console.log("production env mm")
 export const environment = {
   production: false,
   serviceUrl: envObject.BACKEND_URL
