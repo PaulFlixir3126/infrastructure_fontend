@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve",
     "start-local": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng serve",
     "build-local": "node --max_old_space_size=6000 node_modules/@angular/cli/bin/ng build --prod",
     "heroku-postbuild": "ng build --prod",
-   "test": "ng test",
+    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -65,7 +65,7 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.6"
-  } ,
+  },
   "engines": {
     "node": "12.18.3",
     "npm": "6.14.6"
