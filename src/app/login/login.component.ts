@@ -11,9 +11,7 @@ import {
 import {
   Router
 } from '@angular/router';
-import {
-  stringify
-} from '@angular/core/src/render3/util';
+
 import {
   CookiesStorageService,
   LocalStorageService,
