@@ -85,8 +85,13 @@ export class LoginComponent implements OnInit {
       "password": payLoadData.password
     }
     console.log("objectdata", data)
-
+    if(data.email == "admin@gmail.com"){
+      this.redirect('/admin/asset');
+      this.sessionstorge.set('role', 'admin');
+    }else {
     this.redirect('/user/dashboard');
+    this.sessionstorge.set('role', 'user');
+    }
     // accountLogin API start
     // this.restApiService.accountLogin(data).subscribe(res => {
     //   if (res.status == true) {

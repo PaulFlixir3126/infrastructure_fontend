@@ -28,6 +28,7 @@
     "@rxjs/rx": "^4.1.0",
     "a4-pivot-table": "^9.0.0",
     "alasql": "^0.5.8",
+    "angular-google-charts": "^1.1.6",
     "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "express": "^4.17.1",

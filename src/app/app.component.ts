@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'track';
   hideNavBar;
   userName;
+  role;
   constructor(private router: Router,
     private sessionstorge: SessionStorageService, private LocalStorage: LocalStorageService, private permissionsService: NgxPermissionsService,
     private http: HttpClient
@@ -20,6 +21,8 @@ export class AppComponent {
   ngOnInit() {
     setInterval(() => {
       this.userName = this.LocalStorage.get('userName');
+
+this.role = this.sessionstorge.get('role');
     }, 1000);
     // console.log("userName", this.userName)
     setInterval(() => {
@@ -29,7 +32,7 @@ export class AppComponent {
         this.hideNavBar = true;
       }
     }, 1000); // for Headder
-
+    
   }
   logOut() {
     this.sessionstorge.clear();

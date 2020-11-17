@@ -1,11 +1,16 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark pt-1 pb-1" *ngIf="hideNavBar">
   <div class="container-fluid pl-0">
-    <a class="navbar-brand" routerLink="/taskSheet"><img src="../assets/logo.png" class="rounded" alt="Cinque Terre"
+    <a class="navbar-brand" ><img src="../assets/logo.png" class="rounded" alt="Flixir Logo"
         width="160" height="50"></a>
-    <!-- <div class="nav-center pR50">
-      <h4 class="text-white mb0">Comorin Task Tracker</h4>
-    </div> --> 
-    <!-- ? -->
+     <div class="nav-left" *ngIf="role == 'admin'">
+      <ul>
+        <li><a routerLink="/admin/asset">Asset</a></li>
+        <li><a routerLink="/admin/location">Location</a></li>
+        <li><a routerLink="/admin/beacons">Beacons</a></li>
+        <li><a routerLink="/admin/zone">Zone</a></li>
+        <li><a  routerLink="/admin/asset-type">Asset Type</a></li>
+      </ul>  
+     </div>   
     <div class="nav-right" id="textEnd">
       <div class="row">
         <a class="text-white pr-3 pt2">User Name </a>
@@ -21,7 +26,7 @@
     </div>
   </div>
 </nav>
-<!-- <div class="col-sm-2 card vhvw pr-2 pl-2" *ngIf="hideNavBar">
+<!-- <div class="col-sm-2 card vhvw pr-2 pl-2">
   <ul class="pl-0 pt-3" style="list-style-type:none;">
     <li>
       <div class="comp-dashboard">

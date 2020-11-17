@@ -1,0 +1,83 @@
+<form>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 mt-3">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card table-card">
+                <div class="card-header row pt-0 pb-0" >
+                    <div class="col-sm-2">
+                      <h6 class="mb-0 lh-2 pt-3">Beacons List</h6>
+                    </div>
+                    <div class="col-sm-6 pt-3">
+                      <button
+                        class="btn btn-sm btn-primary"
+                        (click)="openDialog()">
+                        Add Beacons
+                      </button>
+                    </div>
+                    <div class="col-sm-4">
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Search Beacons </mat-label>
+                        <input type="text" matInput placeholder="Ex. pat@example.com">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                <div class="card table-card ">
+                  <div class="card-block p-b-0">
+                    <div class="table-responsive">
+                      <table class="table table-hover mb-0">
+                        <thead class="f12">
+                          <tr>
+                            <th class="width5">Slno.</th>
+                            <th>Asset Name</th>
+                            <th>Asset ID</th>
+                            <th class="width10">BLE ID</th>
+                            <th>Location Name</th>
+                            <th class="width10">Sub Location</th>
+                            <th class="width5 text-center">Status</th>
+                            <th class="width5 text-center">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody class="f10">
+                          <tr class="text-left " *ngFor="let Details of listofdata ">
+                            <td class="pl-2">
+                              {{Details.slno}}
+                            </td>
+                            <td class="pl-2">
+                              {{Details.assetName}}
+                            </td>
+                            <td class="pl-2">
+                              {{Details.assetId}}
+                            </td>
+                            <td class="pl-2">
+                              {{Details.BLEId}}
+                            </td>
+                            <td class="pl-2">
+                              {{Details.LocationName}}
+                            </td>
+                            <td class="pl-2">
+                              {{Details.SubLocation}}
+                            </td>
+                            <td class="text-center ">
+                              {{Details.Status}}
+                            </td>
+                            <td class="text-center ">
+                              <button class="btn btn-sm btn-primary"> View Asset</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>

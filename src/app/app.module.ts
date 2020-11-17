@@ -59,6 +59,11 @@ import {
 } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { LocationComponent, LocationDialog } from './location/location.component';
+import { ZoneComponent, ZoneDialog } from './zone/zone.component';
+import { AssetComponent, AssetDialog } from './asset/asset.component';
+import { AssetTypeComponent, AssetTypeDialog } from './asset-type/asset-type.component';
+import { BeaconsComponent, BeaconsDialog } from './beacons/beacons.component';
 // enableProdMode();
 @NgModule({
   declarations: [
@@ -66,6 +71,16 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
     LoginComponent,
     RegisterComponent,
     UserdashboardComponent,
+    LocationComponent,
+    ZoneComponent,
+    AssetComponent,
+    AssetTypeComponent,
+    BeaconsComponent,
+    AssetDialog,
+    AssetTypeDialog,
+    LocationDialog,
+    BeaconsDialog,
+    ZoneDialog
   ],
   imports: [
     FormsModule,
@@ -116,7 +131,8 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
     ChartsModule,
     // Ng2GoogleChartsModule,
     // user role try start
-    NgxPermissionsModule.forRoot()
+    NgxPermissionsModule.forRoot(),
+    // GoogleChartsModule
     // user role try end
   ],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
@@ -129,6 +145,7 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
     },
     DatePipe,
   ],
+  entryComponents: [ AssetDialog,AssetTypeDialog,LocationDialog,BeaconsDialog,ZoneDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

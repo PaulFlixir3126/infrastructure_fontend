@@ -69,5 +69,20 @@ element.style {
 }
 .btn-primary {
   color: #fff;
-  background-color: #007bff !important;
+  border-color: #2d4059 !important;
+  background-color: #2d4059 !important;
+}
+.example-full-width {
+  width: 100%;
+} 
+.mat-head-Cus{
+  text-align: center;
+  color: #fff;
+  background-color: #2d4059 !important;
+}
+.lh-2{
+  line-height: 2;
+}
+.mat-dialog-container {
+  padding: 0px !important;
 }
